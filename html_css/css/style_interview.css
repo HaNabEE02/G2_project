@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "DotGothic16", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-image: url(../img/main_img16.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+h1 {
+  text-transform: capitalize;
+  white-space: nowrap;
+  color: transparent;
+  margin: 0;
+  position: absolute;
+  top: 60%;
+  left: 7%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+h2 {
+  text-transform: capitalize;
+  white-space: nowrap;
+  color: transparent;
+  margin: 0;
+  position: absolute;
+  top: 70%;
+  left: 7%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+h1::before {
+  content: "こんにちは";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: blueviolet;
+  overflow: hidden;
+  border-right: 3px solid white ;
+  animation: typing 1s steps(5) ;
+  z-index: 1;
+}
+h2::before {
+  content: "最初に就職活動してた時は、専攻と関連してエンタメ系、音楽とか映画とか映像とか、そういうのをやりたいなって思ってたんですけど、技術だったりとか、実際に何かしたっていうところがないと、やっぱり就職するのが難しくで、そっちの方面は途中で諦めて、その他に興味があったitっていうところにたどり着いた感じです。日本だと、専攻に関係なくても結構いろんなとこに就職することが新卒だったらできるので、そういうのもあってit業界に入りました。";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: blueviolet;
+  overflow: hidden;
+  border-right: 3px solid white ;
+  animation: typing 10s steps(99) ;
+  z-index: 1;
+}
+
+@keyframes typing {
+  0%{
+    width: 0%;
+  }
+  50%{
+    width: 50%;
+  }
+  100%{
+    width: 100%;
+  }
+}
