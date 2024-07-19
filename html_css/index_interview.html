@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,28 @@
     <link rel="stylesheet" href="css/style_interview.css">
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<h1>こんにちは</h1>
-<h2>最初に就職活動してた時は、専攻と関連してエンタメ系、音楽とか映画とか映像とか、そういうのをやりたいなって思ってたんですけど、技術だったりとか、実際に何かしたっていうところがないと、やっぱり就職するのが難しくで、そっちの方面は途中で諦めて、その他に興味があったitっていうところにたどり着いた感じです。日本だと、専攻に関係なくても結構いろんなとこに就職することが新卒だったらできるので、そういうのもあってit業界に入りました。</h2>
+    <div class="dialog-box">
+        <p id="dialog-text">最初に就職活動してた時は、専攻と関連してエンタメ系、音楽とか映画とか映像とか、そういうのをやりたいなって思ってたんですけど、技術だったりとか、実際に何かしたっていうところがないと、やっぱり就職するのが難しくで、そっちの方面は途中で諦めて、その他に興味があったitっていうところにたどり着いた感じです。日本だと、専攻に関係なくても結構いろんなとこに就職することが新卒だったらできるので、そういうのもあってit業界に入りました。</p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const dialogText = document.getElementById("dialog-text");
+    const text = dialogText.textContent;
+    dialogText.textContent = "";
+    
+    let i = 0;
+    function typeWriter() {
+        if (i < text.length) {
+            dialogText.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50); // Adjust typing speed here
+        }
+    }
+    typeWriter();
+});
+    </script>
 </body>
+
 </html>
