@@ -1,22 +1,229 @@
+/* Reset & Basic Styles */
 @charset "UTF-8";
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-html,
 body {
-    height: 100%;
-    font-family: "DotGothic16", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    overflow: hidden;
-}
-
-.body {
-    background-image: url("../img/main_1.jpg");
+    font-family: Arial, sans-serif;
+    background-image: url("../img/kansou_img.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    padding-top: 80px; /* Header 높이에 맞게 여백 추가 */
+}
+
+.main-header {
+    background-color: rgba(0, 0, 0, 0.8); /* 배경색을 약간 어둡게 설정 */
+    color: #af0000; /* 텍스트 색상 */
+    padding: 20px;
+    position: fixed; /* 화면 상단에 고정 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* 다른 요소들 위에 위치하도록 설정 */
+    height: 80px; /* 헤더의 높이 설정 */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo,
+.sidebar-toggle {
+    flex-shrink: 0;
+}
+
+.header-text {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.logo img {
+    width: 100px;
+    cursor: pointer;
+}
+
+.header-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.header-text p {
+    font-size: 1.2em;
+}
+
+.sidebar-toggle {
+    background: transparent; /* 배경 투명 */
+    color: #be0000;
+    border: none;
+    font-size: 1.5em;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebar {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%); /* 세로 중앙 정렬 */
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding-top: 20px;
+    z-index: 1000; /* 다른 요소들 위에 위치하도록 설정 */
+    transform: translateX(100%) translateY(-50%); /* 사이드바를 화면 오른쪽 바깥으로 위치시키기 */
+    transition: transform 0.3s ease; /* 사이드바의 애니메이션 추가 */
+}
+
+/* 사이드바가 열릴 때의 상태 */
+.sidebar.show {
+    transform: translateX(0) translateY(-50%); /* 사이드바를 화면 안으로 이동 */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #04e95c;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    color: #fff;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.container {
+    padding: 20px;
+    margin-top: 80px; /* 헤더 높이만큼 상단 여백 추가 */
+    z-index: 900; /* main-header와 사이드바 뒤에 위치하도록 설정 */
+    position: relative; /* 자식 요소의 위치 기준 */
+}
+
+/* 섹션 박스 스타일 */
+section.box {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+    color: #fff; /* 텍스트 색상 */
+    padding: 20px;
+    border-radius: 10px; /* 둥근 모서리 */
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 박스 그림자 */
+    max-width: 1200px; /* 최대 너비 제한 */
+    margin: 20px auto; /* 중앙 정렬 */
+}
+
+section.box .picture {
+    flex-shrink: 0;
+    width: 300px;
+    height: 300px;
+    margin: 0 20px;
+    overflow: hidden; /* 이미지를 박스 안에 맞춤 */
+}
+
+section.box .picture img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0; /* 원형이 아닌 직사각형으로 설정 */
+    object-fit: cover;
+}
+
+section.box .content {
+    flex: 1;
+}
+
+section.box h2 {
+    margin-bottom: 20px;
+}
+
+section.box p {
+    line-height: 1.6;
+}
+
+section.left-image .picture {
+    order: -1; /* 왼쪽 정렬 */
+}
+
+section.right-image .picture {
+    order: 1; /* 오른쪽 정렬 */
+}
+
+/* 빈 공간 추가 */
+.empty-space {
+    height: calc(100vh - 60px); /* 화면 전체 높이에서 60px을 뺀 빈 공간 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* 투명 배경 */
+}
+
+/* THE END 화면 */
+.the-end-screen {
+    height: 100vh; /* 화면 전체 높이만큼의 빈 공간 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8); /* 어두운 배경색 */
+    color: #fff; /* 흰색 텍스트 */
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0; /* 기본적으로 숨김 */
+    visibility: hidden; /* 기본적으로 숨김 */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* 서서히 나타나는 애니메이션 추가 */
+    z-index: 1100; /* 다른 요소들 위에 위치하도록 설정 */
+}
+
+/* THE END 화면이 보일 때 */
+.the-end-screen.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.back-to-top:hover {
+    background-color: rgba(0, 0, 0, 0.6);
 }

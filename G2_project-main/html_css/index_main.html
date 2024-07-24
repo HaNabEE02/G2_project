@@ -10,18 +10,36 @@
     <title>チームExp</title>
 </head>
 
-<body>
-    <div class="content">
-        <h1>Exp.</h1>
+<body class="body">
+    <div class="centered">
+        <p class="exp">EXP.</p>
+        <div class="button-container">
+            <button class="custom-button" data-target-url="team_intro.html">
+                <img src="img/나무_판때기_아이콘_main.png" alt="팀 소개">
+                <span>チームのご紹介</span>
+            </button>
+            <div class="custom-button-group">
+                <button class="custom-button" data-target-url="interview1.html">
+                    <img src="img/나무_판때기_아이콘_main.png" alt="인터뷰 상대1">
+                    <span>インタビュー１</span>
+                </button>
+                <button class="custom-button" data-target-url="interview2.html">
+                    <img src="img/나무_판때기_아이콘_main.png" alt="인터뷰 상대2">
+                    <span>インタビュー２</span>
+                </button>
+                <button class="custom-button" data-target-url="interview3.html">
+                    <img src="img/나무_판때기_아이콘_main.png" alt="인터뷰 상대3">
+                    <span>インタビュー３</span>
+                </button>
+            </div>
+            <button class="custom-button" data-target-url="team_review.html">
+                <img src="img/나무_판때기_아이콘_main.png" alt="팀 감상">
+                <span>結び…</span>
+            </button>
+        </div>
     </div>
-    <div class="but1">
-        <a href="ishizaki.html" target="_blank" class="button-link">紹介</a>
-        <a href="https://github.com/HaNabEE02/-" target="_blank" class="button-link">adsf</a>
-    </div>
-    <div class="but2">
-        <a href="https://github.com/HaNabEE02/-" target="_blank" class="button-link">紹介</a>
-        <a href="https://github.com/HaNabEE02/-" target="_blank" class="button-link">adsf</a>
-    </div>
+
+    <audio id="button-sound" src="sound/Button Push Sound.mp3"></audio>
 
     <script src="js/js_main.js"></script>
 </body>
