@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-image: url('img/shoukai-haikei.jpg'); /* 배경 이미지 경로 */
+    background-size: cover; /* 배경 이미지 크기 조정 */
+    background-position: center top; /* 배경 이미지 위치 */
+    background-repeat: no-repeat; /* 배경 이미지 반복 금지 */
+}
+
+.team-members {
+  display: flex; /* Flexbox 활성화 */
+  flex-wrap: wrap; /* 줄 바꿈 허용 */
+  justify-content: center; /* 중앙 정렬 */
+  align-items: flex-start; /* 각 아이템의 상단 정렬 */
+  gap: 8%; /* 각 항목 간의 간격 */
+  list-style-type: none; /* 리스트 스타일 제거 */
+  padding: 0;
+  margin: 20px;
+}
+
+.team-member {
+  text-align: center; /* 이름과 사진의 중앙 정렬 */
+  flex: 1 1 200px; /* 요소의 기본 너비와 성장/축소 비율 */
+  max-width: 200px; /* 최대 너비 제한 */
+  box-sizing: border-box; /* 패딩과 보더를 포함한 너비 계산 */
+  margin: 5px;
+  display: flex; /* Flexbox 활성화 */
+  flex-direction: column; /* 세로 방향 정렬 */
+  align-items: center; /* 가로 및 세로 중앙 정렬 */
+  position: relative; /* 상대적 위치 지정 */
+}
+
+.img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.team-member img {
+  width: 230px; /* 이미지 너비 */
+  height: auto; /* 이미지 비율 유지 */
+  border-radius: 25%;
+  display: block; /* 이미지 블록 속성 */
+  margin: 0 auto; /* 이미지 중앙 정렬 */
+  transition: opacity 0.3s ease; /* 투명도 변화 애니메이션 */
+}
+
+.team-member:hover img {
+  opacity: 0.3; /* 마우스를 올렸을 때 이미지의 투명도를 변경 */
+}
+
+.introduction {
+  position: absolute;
+  top: 0;
+  left: -8%;
+  width: 116%;
+  height: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경 색상 */
+  opacity: 0; /* 초기에는 보이지 않도록 설정 */
+  transition: opacity 0.3s ease; /* 애니메이션 효과 */
+  border-radius: 25%;
+  padding: 20px;
+  box-sizing: border-box; /* 패딩 포함한 박스 크기 계산 */
+}
+
+.team-member:hover .introduction {
+  opacity: 1; /* 마우스를 올렸을 때 자기소개가 보이도록 설정 */
+}
+
+@media (max-width: 600px) {
+  .team-member {
+    flex: 1 1 calc(50% - 20px); /* 좁은 화면에서 요소의 기본 너비 조정 */
+    max-width: 150px;
+  }
+
+  .team-member img {
+    width: 100px; /* 좁은 화면에서 이미지 너비 조정 */
+  }
+
+  .introduction {
+    font-size: 0.8rem; /* 작은 화면에서 글자 크기 조정 */
+  }
+}
