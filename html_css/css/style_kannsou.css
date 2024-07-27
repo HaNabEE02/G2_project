@@ -7,6 +7,23 @@
     box-sizing: border-box;
 }
 
+#intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/예전\ 감상.gif') no-repeat center center/cover; /* 배경 이미지 경로 수정 */
+    z-index: 1000; /* 다른 요소 위에 표시되도록 설정 */
+    opacity: 1;
+    transition: opacity 2s ease;
+  }
+  
+  #intro-overlay.fade-out {
+    opacity: 0;
+    pointer-events: none; /* 투명해진 후에도 상호작용 방지 */
+  }
+  
 body {
     font-family: Arial, sans-serif;
     background-image: url("../img/kansou_img.jpg");
@@ -29,9 +46,9 @@ main {
 }
 
 .main-header {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.671);
     /* 배경색을 약간 어둡게 설정 */
-    color: #e0dede;
+    color: #ffffff;
     /* 텍스트 색상 */
     padding: 20px;
     position: fixed;
@@ -175,7 +192,7 @@ main {
     /* 전체 화면 높이에서 헤더 높이만큼 제외 */
     width: 200px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.671);
     color: #fff;
     padding: 20px 0;
     /* 패딩을 상하 20px으로 설정 */
@@ -576,7 +593,18 @@ section.right-image .picture {
         transform: translateY(0);
     }
 }
-
+/* 애니메이션이 적용될 요소의 기본 상태 */
+.animated {
+    opacity: 0; /* 애니메이션 시작 시 요소가 보이지 않도록 설정 */
+    transform: translateY(20px); /* 애니메이션 시작 시 위치 조정 */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  /* 애니메이션이 적용될 요소가 화면에 보일 때의 상태 */
+  .animated.show-animation {
+    opacity: 1;
+    transform: translateY(0); /* 원래 위치로 이동 */
+  }
 /* 이미지 오버레이 스타일 */
 .image-overlay img {
     width: 100%;
