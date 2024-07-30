@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXP.kansou Example</title>
+  <link rel="stylesheet" href="css/style_kannsou.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="intro-overlay"></div>
+
+  <audio src="sound/MP_달콤한 낮잠 시간.mp3" id="bgm" loop></audio>
+
+  <div id="volume-controls">
+    <button id="mute-toggle">Mute</button>
+    <input type="range" id="volume-control" min="0" max="1" step="0.01" value="1">
+  </div>
+
+  <header class="main-header">
+    <div class="header">
+      <a href="index_main.html">
+        <div class="logo">
+          <img src="img/exp_main_0.gif" alt="Logo">
+        </div>
+      </a>
+      <div class="header-text">
+        <h1>ー完ー</h1>
+        <p>旅の出る</p>
+      </div>
+      <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+    </div>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <button id="close-btn" class="close-btn">×</button>
+    <ul class="section-links">
+      <li>
+        <a href="#감상">感想</a>
+        <ul>
+          <li><a href="#손승준">손승준</a></li>
+          <li><a href="#ジョン・ヘスン">ジョン・ヘスン</a></li>
+          <li><a href="#전병찬">전병찬</a></li>
+          <li><a href="#장동혁">장동혁</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#thank-you">Thank you</a>
+        <ul>
+          <li><a href="#鈴木 和夫">鈴木 和夫</a></li>
+          <li><a href="#石崎 希">石崎 希</a></li>
+          <li><a href="#Robert">Robert</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="sidebar-footer">
+      <a href="index_syoukai.html">
+        <img src="img/shoukai_main.png" alt="Link Image">
+      </a>
+    </div>
+    <div class="sidebar-footer">
+      <a href="index_main.html">
+        <img src="img/back_main.png" alt="Link Image">
+      </a>
+    </div>
+  </div>
+
+  <section id="감상" class="感想-section animated">
+    <h1>感想</h1>
+  </section>
+
+  <div class="container ">
+    <section id="손승준" class="box right-image animated">
+      <div class="content">
+        <h2>손승준</h2>
+        <p>ㅇㄴㅁㄹㅇㄴㅁㄹ...</p>
+      </div>
+      <div class="picture"><img src="img/k_손승준.png" alt=""></div>
+    </section>
+
+    <section id="ジョン・ヘスン" class="box left-image animated">
+      <div class="picture"><img src="img/k_정해승.png" alt=""></div>
+      <div class="content">
+        <h2>ジョン・ヘスン</h2>
+        <p>스이세이방송...</p>
+      </div>
+    </section>
+
+    <section id="전병찬" class="box right-image animated">
+      <div class="content">
+        <h2>전병찬</h2>
+        <p>지훈씨빠악빠악...</p>
+      </div>
+      <div class="picture"><img src="img/k_전병찬.png" alt=""></div>
+    </section>
+
+    <section id="장동혁" class="box left-image animated">
+      <div class="picture"><img src="img/k_장동혁.png" alt=""></div>
+      <div class="content">
+        <h2>도트장인</h2>
+        <p>하기싫어살려줘...</p>
+      </div>
+    </section>
+  </div>
+
+  <section id="thank-you" class="thank-you-section animated">
+    <h1>Thank You For...</h1>
+  </section>
+
+  <section id="image-text-section" class="image-text-section">
+    <div class="container">
+      <section id="鈴木 和夫" class="item animated">
+        <div class="image-overlay-container">
+          <div class="image-overlay">
+            <img src="img/스즈키상.jpg" alt="鈴木 和夫">
+            <a href="index_interview_suzuki.html" class="overlay-link">
+              <img src="img/char_Suzuki_main.png" alt="鈴木 和夫 아바타 이미지">
+            </a>
+          </div>
+          <div class="text-container animated">
+            <h2>鈴木 和夫</h2>
+            <p>鈴木 和夫에 대한 자세한 설명을 여기에 작성합니다. 여기에 추가적인 정보를 적어주세요.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="石崎 希" class="item animated">
+        <div class="image-overlay-container">
+          <div class="image-overlay">
+            <img src="img/이시자키상.jpg" alt="石崎 希">
+            <a href="index_interview_ishizaki.html" class="overlay-link">
+              <img src="img/char-Isizaki_main.png" alt="이시자키님 아바타 이미지">
+            </a>
+          </div>
+          <div class="text-container">
+            <h2>石崎 希</h2>
+            <p>石崎 希에 대한 자세한 설명을 여기에 작성합니다. 여기에 추가적인 정보를 적어주세요.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="Robert" class="item animated">
+        <div class="image-overlay-container">
+          <div class="image-overlay">
+            <img src="img/Robert상.jpg" alt="Robert">
+            <a href="index_interview_Robert.html" class="overlay-link">
+              <img src="img/char-Robert_main.png" alt="Robert님 아바타 이미지">
+            </a>
+          </div>
+          <div class="text-container">
+            <h2>Robert</h2>
+            <p>Robert에 대한 자세한 설명을 여기에 작성합니다. 여기에 추가적인 정보를 적어주세요.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <div class="empty-space"></div>
+
+  <a href="#top" class="back-to-top" id="back-to-top">↑</a>
+
+  <script src="js/js_kannsou.js"></script>
+
+  <div class="the-end-screen">
+    <h1>TO BE CONTINUED...</h1>
+  </div>
+</body>
+
+</html>
