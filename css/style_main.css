@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "DotGothic16", sans-serif;
+  font-weight: 600;
+  font-size: 1vw;
+}
+
+.body {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: main_img 8s infinite;
+}
+
+@keyframes main_img {
+
+  0%,
+  100% {
+    background-image: url("../img/main_1.jpg");
+  }
+
+  20% {
+    background-image: url("../img/main_2.jpg");
+  }
+
+  40% {
+    background-image: url("../img/main_3.jpg");
+  }
+
+  60% {
+    background-image: url("../img/main_4.jpg");
+  }
+
+  80% {
+    background-image: url("../img/main_5.jpg");
+  }
+}
+
+.centered {
+  text-align: center;
+  position: absolute;
+}
+
+.exp {
+  display: flex;
+  width: 27vw;
+  height: 15vw;
+  opacity: 0;
+  transform: translateY(-5vw);
+  animation: fadeInDown 2s forwards ease-in-out, floating 3s infinite ease-in-out;
+  animation-delay: 0.5s, 2.5s;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-5vw);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.5vw);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(5vw);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(5vw);
+  animation: fadeInUp 2s forwards ease-in-out, floating 3s infinite ease-in-out;
+  animation-delay: 1.5s, 3s;
+}
+
+.custom-button-group {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.custom-button {
+  position: relative;
+  width: 8vw;
+  height: 3.15vw;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 2vw;
+  transition: transform 0.3s ease, font-weight 0.3s ease;
+}
+
+.custom-button img {
+  width: 100%;
+  height: 100%;
+}
+
+.custom-button span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-weight: bold;
+  font-style: clamp(12px, 2vw, 18px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.custom-button:hover {
+  transform: scale(1.1);
+}
+
+.custom-button:hover span {
+  font-weight: bold;
+}
+
+/* 세로 화면 비율이 높은 경우 */
+@media (orientation: portrait) {
+  .exp {
+    width: 27vh;
+    height: 15vh;
+    margin-bottom: 4vh;
+  }
+
+  .custom-button {
+    width: 8vh;
+    height: 3.15vh;
+  }
+
+  .custom-button span {
+    font-style: clamp(24px, 2vh, 36px);
+  }
+
+  .custom-button-group {
+    gap: 2vh;
+  }
+}
+
+/* 가로 화면 비율이 높은 경우 */
+@media (orientation: landscape) {
+  .exp {
+    width: 27vw;
+    height: 15vw;
+  }
+
+  .custom-button {
+    width: 8vw;
+    height: 3.15vw;
+  }
+
+  .custom-button-group {
+    gap: 2vw;
+  }
+}
