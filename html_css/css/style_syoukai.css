@@ -2,45 +2,59 @@
 
 html,
 body {
-    margin: 0; /* 기본 여백 제거 */
-    padding: 0; /* 기본 패딩 제거 */
+    margin: 0;
+    padding: 0;
     height: 100%;
     font-family: "DotGothic16", sans-serif;
     font-weight: 400;
     font-style: normal;
-    background-image: url('img/shoukai-haikei.jpg'); /* 배경 이미지 경로 */
-    background-size: cover; /* 배경 이미지 크기 조정 */
-    background-position: center top; /* 배경 이미지 위치 */
-    background-repeat: no-repeat; /* 배경 이미지 반복 금지 */
+    background-image: url(../img/shoukai-main.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 header {
-    margin: 0; /* 기본 여백 제거 */
-    padding: 0; /* 기본 패딩 제거 */
-    position: relative; /* 상대적 위치 지정 */
-    height: auto; /* 자동 높이 조정 */
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: auto;
 }
 
 h1 {
-    text-align: center;
-    padding-top: 15%;
-    color: white; /* 배경 이미지 위에서 잘 보이도록 텍스트 색상 설정 */
+    color: black;
+    position: absolute;
+    right: 38%;
+    top: 50%;
 }
 
 h4 {
-    color: white; /* 배경 이미지 위에서 잘 보이도록 텍스트 색상 설정 */
+    color: black;
     margin-top: 10px;
 }
 
+#team-logo-container {
+  position: fixed;
+  top: 1%;
+  left: 1%;
+  z-index: 10;
+}
+
+#team-logo {
+  width: 160px;  /* 기본 너비 */
+  height: auto; /* 비율에 맞춰 높이 조정 */
+  cursor: pointer;
+}
+
 .team-members {
-    display: flex; /* Flexbox 활성화 */
-    flex-wrap: wrap; /* 줄 바꿈 허용 */
-    justify-content: center; /* 중앙 정렬 */
-    align-items: flex-start; /* 각 아이템의 상단 정렬 */
-    gap: 8%; /* 각 항목 간의 간격 */
-    list-style-type: none; /* 리스트 스타일 제거 */
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: calc(33%);
+    right: calc(24%);
+    gap: 8%;
+    list-style-type: none;
     padding: 0;
-    margin: 20px;
 }
 
 .team-member {
@@ -81,6 +95,7 @@ h4 {
     width: 116%;
     height: 85%;
     display: flex;
+    font-size: 1rem;
     justify-content: center;
     align-items: center;
     color: white;
@@ -108,8 +123,12 @@ h4 {
 }
 
 .menu-ico {
-    width: 80px;
-    height: auto;
+    width: 4.7vw;
+    height: 3vw;
+    top: 2%;
+    right: 0.2vw;
+    position: absolute;
+    z-index: 3;
     cursor: pointer; /* 클릭 가능하도록 설정 */
 }
 
@@ -134,25 +153,29 @@ h4 {
 }
 
 #main-button-wrapper {
-    position: absolute;
-    top: 100%; /* fuck 버튼 바로 아래에 위치 */
-    right: 0; /* 오른쪽 끝에 위치 */
-    opacity: 0; /* 초기에는 보이지 않도록 설정 */
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transform: translateY(-20px); /* 시작 위치를 위로 조정 */
+  position: absolute;
+  top: 100%;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(-20px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 #main-button-wrapper.show {
-    opacity: 1; /* 보이도록 설정 */
-    transform: translateY(0); /* 애니메이션으로 제자리로 이동 */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .custom-button {
-    width: 96px;
-    height: 60px;
+    width: 12vw;
+    height: 9vw;
     background: none;
     border: none;
     cursor: pointer;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .custom-button img {
@@ -164,22 +187,96 @@ h4 {
     transform: scale(1.1);
 }
 
-@media (max-width: 600px) {
-    .team-member {
-        flex: 1 1 calc(50% - 20px); /* 좁은 화면에서 요소의 기본 너비 조정 */
-        max-width: 150px;
-    }
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 1200px) {
+  .team-member {
+      flex: 1 1 calc(33% - 2%);
+      max-width: 200px;
+  }
 
-    .team-member img {
-        width: 100px; /* 좁은 화면에서 이미지 너비 조정 */
-    }
+  .team-member img {
+      width: 100%;
+  }
 
-    .introduction {
-        font-size: 0.8rem; /* 작은 화면에서 글자 크기 조정 */
-    }
+  .introduction {
+      font-size: 0.9rem;
+  }
 
-    .back-button {
-        width: 80px; /* 작은 화면에서 버튼 너비 조정 */
-        height: 80px; /* 작은 화면에서 버튼 높이 조정 */
-    }
+  .custom-button {
+      width: 140px;
+      height: 80px;
+  }
+
+  #main-button-wrapper {
+      top: calc(100% + 15px); /* 메뉴 버튼 아래에 위치 조정 */
+  }
+
+  #team-logo {
+      width: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-member {
+      flex: 1 1 calc(50% - 2%);
+      max-width: 150px;
+  }
+
+  .team-member img {
+      width: 100%;
+  }
+
+  .introduction {
+      font-size: 0.6rem;
+  }
+
+  .custom-button {
+      width: 100px;
+      height: 60px;
+  }
+
+  #main-button-wrapper {
+      top: calc(100% + 15px); /* 메뉴 버튼 아래에 위치 조정 */
+  }
+
+  #team-logo {
+      width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-member {
+      flex: 1 1 calc(66% - 2%);
+      max-width: 100px;
+  }
+
+  .team-member img {
+      width: 80%;
+  }
+
+  .introduction {
+      font-size: 5px;
+  }
+
+  .custom-button {
+      width: 80px;
+      height: 50px;
+  }
+
+  #main-button-wrapper {
+      top: calc(100% + 15px); /* 메뉴 버튼 아래에 위치 조정 */
+  }
+
+  h1 {
+      font-size: 1.5rem;
+      padding-top: 5%;
+  }
+
+  .menu-ico {
+      width: 60px;
+  }
+
+  #team-logo {
+      width: 100px;
+  }
 }
