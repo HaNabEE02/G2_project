@@ -1,0 +1,185 @@
+@charset "UTF-8";
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-image: url(../img/shoukai-main.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: auto;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 15%;
+    color: white;
+}
+
+h4 {
+    color: white;
+    margin-top: 10px;
+}
+
+.team-members {
+    position: absolute;
+    display: flex;
+    top: calc(50%);
+    left: calc(25%);
+    gap: 8%;
+    list-style-type: none;
+    padding: 0;
+}
+
+.team-member {
+    text-align: center; /* 이름과 사진의 중앙 정렬 */
+    flex: 1 1 200px; /* 요소의 기본 너비와 성장/축소 비율 */
+    max-width: 200px; /* 최대 너비 제한 */
+    box-sizing: border-box; /* 패딩과 보더를 포함한 너비 계산 */
+    margin: 5px;
+    display: flex; /* Flexbox 활성화 */
+    flex-direction: column; /* 세로 방향 정렬 */
+    align-items: center; /* 가로 및 세로 중앙 정렬 */
+    position: relative; /* 상대적 위치 지정 */
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.team-member img {
+    width: 230px; /* 이미지 너비 */
+    height: auto; /* 이미지 비율 유지 */
+    border-radius: 25%;
+    display: block; /* 이미지 블록 속성 */
+    margin: 0 auto; /* 이미지 중앙 정렬 */
+    transition: opacity 0.3s ease; /* 투명도 변화 애니메이션 */
+}
+
+.team-member:hover img {
+    opacity: 0.3; /* 마우스를 올렸을 때 이미지의 투명도를 변경 */
+}
+
+.introduction {
+    position: absolute;
+    top: 0;
+    left: -8%;
+    width: 116%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경 색상 */
+    opacity: 0; /* 초기에는 보이지 않도록 설정 */
+    transition: opacity 0.3s ease; /* 애니메이션 효과 */
+    border-radius: 25%;
+    padding: 20px;
+    box-sizing: border-box; /* 패딩 포함한 박스 크기 계산 */
+}
+
+.team-member:hover .introduction {
+    opacity: 1; /* 마우스를 올렸을 때 자기소개가 보이도록 설정 */
+}
+
+.menu-container {
+    position: fixed; /* 화면에 고정 */
+    top: 1%; /* 상단에 위치 */
+    left: 94%; /* 오른쪽에 위치 */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 오른쪽 끝에 정렬 */
+    padding: 10px; /* 여백 추가 */
+}
+
+.menu-ico {
+    width: 80px;
+    height: auto;
+    cursor: pointer; /* 클릭 가능하도록 설정 */
+}
+
+@keyframes shake-horizontal {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+@keyframes shake-vertical {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-6px); }
+  75% { transform: translateY(6px); }
+}
+
+.menu-ico.shake-horizontal {
+  animation: shake-horizontal 1s ease;
+}
+
+.menu-ico.shake-vertical {
+  animation: shake-vertical 1s ease;
+}
+
+#main-button-wrapper {
+    position: absolute;
+    top: 100%;
+    right: -500px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(-20px);
+}
+
+#main-button-wrapper.show {
+    opacity: 1;
+    transform: translateY(0);
+    right: 0%;
+}
+
+.custom-button {
+    width: 96px;
+    height: 60px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.custom-button img {
+    width: 100%;
+    height: auto;
+}
+
+.custom-button:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    .team-member {
+        flex: 1 1 calc(50% - 20px); /* 좁은 화면에서 요소의 기본 너비 조정 */
+        max-width: 150px;
+    }
+
+    .team-member img {
+        width: 100px; /* 좁은 화면에서 이미지 너비 조정 */
+    }
+
+    .introduction {
+        font-size: 0.8rem; /* 작은 화면에서 글자 크기 조정 */
+    }
+
+    .back-button {
+        width: 80px; /* 작은 화면에서 버튼 너비 조정 */
+        height: 80px; /* 작은 화면에서 버튼 높이 조정 */
+    }
+}
