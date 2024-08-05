@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXP.kansou Example</title>
+  <link rel="stylesheet" href="css/style_kannsou.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="intro-overlay"></div>
+
+  <audio src="sound/MP_달콤한 낮잠 시간.mp3" id="bgm" loop></audio>
+
+  <div id="volume-controls">
+    <button id="mute-toggle">Mute</button>
+    <input type="range" id="volume-control" min="0" max="1" step="0.01" value="1">
+  </div>
+
+  <header class="main-header">
+    <div class="header">
+      <a href="index_main.html">
+        <div class="logo">
+          <img src="img/exp_main_0.gif" alt="Logo">
+        </div>
+      </a>
+      <div class="header-text">
+        <h1>ー完ー</h1>
+        <p>再び旅に出る</p>
+      </div>
+      <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+    </div>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <button id="close-btn" class="close-btn">×</button>
+    <ul class="section-links">
+      <li>
+        <a href="#감상">感想</a>
+        <ul>
+          <li><a href="#손승준">ソン・スンジュン</a></li>
+          <li><a href="#ジョン・ヘスン">ジョン・ヘスン</a></li>
+          <li><a href="#전병찬">ジョン・ビョンチャン</a></li>
+          <li><a href="#장동혁">ジャン・ドンヒョク</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#thank-you">Thank you</a>
+        <ul>
+          <li><a href="#鈴木 和夫">鈴木 和夫</a></li>
+          <li><a href="#石崎 希">石崎 希</a></li>
+          <li><a href="#Robert">Robert</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="sidebar-footer">
+      <a href="index_syoukai.html">
+        <img src="img/shoukai_main.png" alt="Link Image">
+      </a>
+    </div>
+    <div class="sidebar-footer">
+      <a href="index_main.html">
+        <img src="img/back_main.png" alt="Link Image">
+      </a>
+    </div>
+  </div>
+
+  <section id="감상" class="感想-section animated">
+    <h1>感想</h1>
+  </section>
+
+  <div class="container ">
+    <section id="손승준" class="box right-image animated">
+      <div class="content">
+        <h2>ソン・スンジュン</h2>
+        <p>プロジェクトの始まりから私も、他の皆さんもHTMLもCSSも経験がなくて心配しました。<br>しかし、自分一人ですることを分担し、良い結果を出せるようになりました。
+          <br>新たな環境に住む方の話でしたので得たものが多かったです。<br>そして、能力が少なくてもチームで協力すると必ず成功することが感じられました。</p>
+      </div>
+      <div class="picture"><img src="img/k_손승준.png" alt=""></div>
+    </section>
+
+    <section id="ジョン・ヘスン" class="box left-image animated">
+      <div class="picture"><img src="img/k_정해승.png" alt=""></div>
+      <div class="content">
+        <h2>ジョン・ヘスン</h2>
+        <p>外国で働くことに対する初心者としての恐怖を抱えていましたが、これらの感情を受け入れ、実際に経験することについて考えながらインタビューに臨みました。
+          <br><br>
+          成長の鍵は失敗を恐れずに前に進むことであると信じるようになりました。<br>また、今行っていることが本当に自分がやりたいことなのかを再考するきっかけにもなりました。<br>将来については確かに不安や心配がありますが、まだ若く、短い人生の中でやりたいことを楽しみたいという気持ちを改めて実感しました。</p>
+      </div>
+    </section>
+
+    <section id="전병찬" class="box right-image animated">
+      <div class="content">
+        <h2>ジョン・ビョンチャン</h2>
+        <p>最も良かったのは、協力し合った時によりいい結果を出せることを実感したことでした。
+          <br> HTML,CSS未経験者4人で始まり、足りないところもありましたが、自分が元々期待していたことよりはいい結果を出せたと思います。
+          <br>このような無茶苦茶な挑戦に付き合ってくださった皆様に感謝申し上げます。
+          <br>また、無茶苦茶な挑戦ができるように準備してくださった청해진の先生方々にも感謝申し上げます！</p>
+      </div>
+      <div class="picture"><img src="img/k_전병찬.png" alt=""></div>
+    </section>
+
+    <section id="장동혁" class="box left-image animated">
+      <div class="picture"><img src="img/k_장동혁.png" alt=""></div>
+      <div class="content">
+        <h2>ジャン・ドンヒョク</h2>
+        <p> プロジェクトの初めの頃、私がここで役に立てるかどうか心配していました。<br>それでも幸いにもメンバーたちと話し合いながら、自分の役割を見つけることができ、任された仕事を遂行できるようになりました。<br>また、ウェブページ制作のためにインタビューを行い、新しい環境に適応しながら前に進む方々の率直な心情を聞くことで、自分に必要な態度を学ぶことができました。</p>
+      </div>
+    </section>
+  </div>
+
+  <section id="thank-you" class="thank-you-section animated">
+    <h1>Thank You For...</h1>
+  </section>
+
+  <section id="image-text-section" class="image-text-section">
+    <div class="container">
+      <section id="鈴木 和夫" class="item animated">
+        <div class="image-overlay-container">
+          <div class="image-overlay">
+            <img src="img/스즈키상.jpg" alt="鈴木 和夫">
+            <a href="index_interview_suzuki.html" class="overlay-link">
+              <img src="img/char_Suzuki_main.png" alt="鈴木 和夫 아바타 이미지">
+            </a>
+          </div>
+          <div class="text-container animated">
+            <h2>鈴木 和夫</h2>
+            <p>BANDO KOREA
+              <br>法学部専攻
+              <br>和歌山県生まれ
+              <br>京都(大学)、大阪、東京、シンガポール、神戸、シカゴ(アメリカ)で生活
+              <br>タイ、インドネシア、マレーシア、インド、中東、ドバイなど出張
+              <br>趣味：テニス, ゴルフ
+              </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="石崎 希" class="item animated">
+        <div class="image-overlay-container">
+          <div class="image-overlay">
+            <img src="img/이시자키상.jpg" alt="石崎 希">
+            <a href="index_interview_ishizaki.html" class="overlay-link">
+              <img src="img/char-Isizaki_main.png" alt="이시자키님 아바타 이미지">
+            </a>
+          </div>
+          <div class="text-container">
+            <h2>石崎 希</h2>
+            <p>オープンリソース株式会社
+              <br>比較芸術専攻<br>（違う比較して、比較することでより見えてくるものを評価する学科）
+              <br>リアクトタイプ、スクリプトを使って、フロントエンドの開発
+              <br>先に会社へ関心を持ってITという分野の提案を受けたことがきっかけ
+              <br>趣味：韓国ドラマ 
+              </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="Robert" class="item animated">
+        <div class="image-overlay-container">
+          <div class="image-overlay">
+            <img src="img/Robert상.jpg" alt="Robert">
+            <a href="index_interview_Robert.html" class="overlay-link">
+              <img src="img/char-Robert_main.png" alt="Robert님 아바타 이미지">
+            </a>
+          </div>
+          <div class="text-container">
+            <h2>Robert</h2>
+            <p>フリーランス(音楽、教育など)
+              <br>東洋学専攻
+              <br>イギリス、アメリカ、フィリピン、中国で生活
+              <br>「私」で生きていくために自分が決めた名前で自分を紹介している。
+              </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <div class="empty-space"></div>
+
+  <a href="#top" class="back-to-top" id="back-to-top">↑</a>
+
+  <script src="js/js_kannsou.js"></script>
+
+  <div class="the-end-screen">
+    <h1>TO BE CONTINUED...</h1>
+  </div>
+</body>
+
+</html>
